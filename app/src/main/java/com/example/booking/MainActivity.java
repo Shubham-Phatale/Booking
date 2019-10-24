@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
                     selectfrag = new profileFragment();
                     break;
             }
-            return false;
+            getSupportFragmentManager().beginTransaction().replace(R.id.fc,selectfrag).commit();
+
+            return true;
         }
     });
     }
