@@ -40,10 +40,10 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.getCount()>0) return true;
         else return false;
     }
-    public Boolean idpass(String email, String password) {
+    public Boolean emailpass(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where s_name=? and s_pass=?",new String[] {email,password} );
-        if (cursor.getCount() > 0) return true;
-        else return false;
+        Cursor cursor = db.rawQuery("Select * from user where email=? and password=?",new String[] {email,password} );
+        if (cursor.getCount() > 0) return false;
+        else return true;
     }
 }

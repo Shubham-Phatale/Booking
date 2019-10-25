@@ -2,6 +2,7 @@ package com.example.booking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -15,7 +16,7 @@ import com.example.booking.Database.DBHelper;
 public class Registration extends AppCompatActivity {
     DBHelper db;
     EditText edtname,edtemail,edtage,edtgender,edtpass,edtcnfpass;
-    Button regbtn;
+    Button regbtn,logbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,11 @@ public class Registration extends AppCompatActivity {
         edtname = findViewById(R.id.name);
         edtemail = findViewById(R.id.email);
         edtage = findViewById(R.id.age);
-        edtgender = findViewById(R.id.gender);
+        edtgender = findViewById(R.id.Mobno);
         edtpass = findViewById(R.id.password);
         edtcnfpass = findViewById(R.id.cnfpass);
         regbtn = findViewById(R.id.btnreg);
+        logbtn = findViewById(R.id.btnlog);
 
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,23 +50,26 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Passord Donot Match", Toast.LENGTH_SHORT).show();
                 }
                 else{
-
-                        Boolean check = db.checkid(email);
-                        if (check == true){
-                            Toast.makeText(getApplicationContext(), "ID already Exists", Toast.LENGTH_SHORT).show();
+                    Boolean check = db.checkid(email);
+                    if (check == true){
+                        Toast.makeText(getApplicationContext(), "ID already Exists", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Boolean insert = db.insert(name,email,age,gender,pass);
+                        if (insert == true){
+                            Toast.makeText(getApplicationContext(), "Registered Sucessfully", Toast.LENGTH_SHORT).show();
+                            Log.i("SHUB","Values Entered Sucessfully");
                         }
-                        else{
-                            Boolean insert = db.insert(name,email,age,gender,pass);
-                            if (insert == true){
-                                Toast.makeText(getApplicationContext(), "Registered Sucessfully", Toast.LENGTH_SHORT).show();
-                                Log.i("SHUB","Values Entered Sucessfully");
-                            }
-
-                        }
-
-
-
+                    }
                 }
+            }
+        });
+        logbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Registration.this, Login.class);
+                startActivity(i);
+                finish();
             }
         });
 
