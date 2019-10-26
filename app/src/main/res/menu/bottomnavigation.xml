@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Home"/>
     <item
-        android:title="My Booking"
+        android:title="Help"
         android:id="@+id/nav_book"
         android:icon="@drawable/ic_notifications_black_24dp"
         />
