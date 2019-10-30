@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomnavi;
+    Fragment selectfrag = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     bottomnavi = findViewById(R.id.bn);
+    selectfrag = new HomeFragment();
+    getSupportFragmentManager().beginTransaction().replace(R.id.fc,selectfrag).commit();
 
 
-    bottomnavi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+        bottomnavi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            Fragment selectfrag = null;
             switch (menuItem.getItemId()){
                 case R.id.nav_home:
                     selectfrag = new HomeFragment();

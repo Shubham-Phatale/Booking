@@ -3,16 +3,16 @@
     <color name="colorPrimary">#49BEFF</color>
     <color name="colorPrimaryDark">#65DCE5</color>
     <color name="colorAccent">#0D5D98</color>
-    <color name="Textcolor">#0A0A0A</color>
-    <color name="Address">#2F7092</color>
-    <color name="Followers">#0d5d98</color>
-    <color name="headings">#3797CF</color>
+    <color name="Textcolor">#ffff</color>
     <color name="solidcircle">#AAffffff</color>
     <color name="circleborder">#50ffffff</color>
     <color name="gradend">#67EFC8</color>
     <color name="gradstart">#63C9FF</color>
     <color name="followersbg">#65DCE5</color>
     <color name="followingbg">#49BEFF</color>
-
-    <color name="name">#ffff</color>
+    <color name="edtcolor">#00A704</color>
+    <color name="edtbg">#333333</color>
+    <color name="buttonstyle">#1FD662</color>
+    <color name="bgcolor">#202022</color>
+    <color name="frgt">#1174A0</color>
 </resources>

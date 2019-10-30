@@ -15,7 +15,7 @@ import com.example.booking.Database.DBHelper;
 
 public class Registration extends AppCompatActivity {
     DBHelper db;
-    EditText edtname,edtemail,edtage,edtgender,edtpass,edtcnfpass;
+    EditText edtname,edtemail,edtage,edtnumber,edtpass,edtcnfpass;
     Button regbtn,logbtn;
 
     @Override
@@ -27,7 +27,7 @@ public class Registration extends AppCompatActivity {
         edtname = findViewById(R.id.name);
         edtemail = findViewById(R.id.email);
         edtage = findViewById(R.id.age);
-        edtgender = findViewById(R.id.Mobno);
+        edtnumber = findViewById(R.id.Mobno);
         edtpass = findViewById(R.id.password);
         edtcnfpass = findViewById(R.id.cnfpass);
         regbtn = findViewById(R.id.btnreg);
@@ -39,11 +39,11 @@ public class Registration extends AppCompatActivity {
                 String name = edtname.getText().toString().trim();
                 String email = edtemail.getText().toString().trim();
                 String age = edtage.getText().toString().trim();
-                String gender = edtgender.getText().toString().trim();
+                String number = edtnumber.getText().toString().trim();
                 String pass = edtpass.getText().toString().trim();
                 String cnfpass = edtcnfpass.getText().toString().trim();
 
-                if(name.equals("")||email.equals("")||age.equals("")||gender.equals("")||pass.equals("")||cnfpass.equals("")){
+                if(name.equals("")||email.equals("")||age.equals("")||number.equals("")||pass.equals("")||cnfpass.equals("")){
                     Toast.makeText(getApplicationContext(), "All Fields are Required", Toast.LENGTH_SHORT).show();
                 }
                 else if (!pass.equals(cnfpass)){
@@ -55,7 +55,7 @@ public class Registration extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "ID already Exists", Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Boolean insert = db.insert(name,email,age,gender,pass);
+                        Boolean insert = db.insert(name,email,number,age,pass);
                         if (insert == true){
                             Toast.makeText(getApplicationContext(), "Registered Sucessfully", Toast.LENGTH_SHORT).show();
                             Log.i("SHUB","Values Entered Sucessfully");
