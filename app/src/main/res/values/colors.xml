@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#65DCE5</color>
     <color name="colorAccent">#0D5D98</color>
     <color name="Textcolor">#ffff</color>
+    <color name="textcolor">#0A0A0A</color>
     <color name="solidcircle">#AAffffff</color>
     <color name="circleborder">#50ffffff</color>
     <color name="gradend">#67EFC8</color>

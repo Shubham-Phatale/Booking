@@ -48,9 +48,12 @@ public class HomeFragment extends Fragment {
                      edtdestination.setError("Please Enter Destination");
                  Toast.makeText(getActivity(), "Please Enter City Name", Toast.LENGTH_SHORT).show();
              }
-             else{
-                Intent i = new Intent(getActivity(),searchResults.class);
+             else if (source.equals("Latur") && dest.equals("Mumbai")){
+                Intent i = new Intent(getActivity(),Result.class);
                 startActivity(i);
+             }
+             else {
+                 Toast.makeText(getActivity(), "Invalid data", Toast.LENGTH_SHORT).show();
              }
             }
         });

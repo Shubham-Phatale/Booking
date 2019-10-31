@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class BookingFragment extends Fragment {
+public class HelpFragment extends Fragment {
 
 
     @Nullable

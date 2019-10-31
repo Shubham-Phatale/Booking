@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.ClipData;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     selectfrag = new HomeFragment();
                     break;
                 case R.id.nav_book:
-                    selectfrag = new BookingFragment();
+                    selectfrag = new HelpFragment();
                     break;
                 case R.id.nav_profile:
                     selectfrag = new profileFragment();
